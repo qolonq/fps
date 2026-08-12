@@ -166,12 +166,10 @@ int main(int argc, char *argv[]) {
     app_mode mode = detect_file_type(file_path);
 
     if (mode == MODE_UNSUPPORTED) {
-        printf("Unsupported file format.\n");
         return 1;
     }
 
     if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_TIMER) < 0) {
-        printf("SDL_Init error: %s\n", SDL_GetError());
         return -1;
     }
     IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG | IMG_INIT_WEBP);
